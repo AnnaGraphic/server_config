@@ -38,6 +38,8 @@
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "panda";
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "altgr-intl";
 
   # desktop settings
   programs.dconf.enable = true;
@@ -45,7 +47,6 @@
 
 
   # Configure keymap in X11
-  services.xserver.layout = "us";
   services.xserver.xkbOptions = "eurosign:e";
 
 
