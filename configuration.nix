@@ -91,7 +91,7 @@
     pkgs.wget
     pkgs.git
     pkgs.weechat
-    pkgs.mosh
+    pkgs.mosh # mobile shell
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
