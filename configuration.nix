@@ -40,6 +40,7 @@
   services.xserver.displayManager.autoLogin.user = "panda";
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
+  services.syncthing.enable = true;
 
   # desktop settings
   programs.dconf.enable = true;
