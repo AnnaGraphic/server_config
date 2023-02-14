@@ -41,6 +41,9 @@
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
   services.syncthing.enable = true;
+  services.syncthing.user = "panda";
+  services.syncthing.dataDir = "/home/panda/";
+  services.syncthing.configDir = "/home/panda/.config/syncthing";
 
   # desktop settings
   programs.dconf.enable = true;
