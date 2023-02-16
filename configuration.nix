@@ -120,6 +120,11 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   # services.tlp.enable = true; # for bluethooth etc # conflicts with services.power-profiles-demon
+  services.logind = {
+    lidSwitch = "lock";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "lock";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
