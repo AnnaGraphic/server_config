@@ -40,15 +40,20 @@
   services.xserver.displayManager.autoLogin.user = "panda";
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
-  services.syncthing.enable = true;
-  services.syncthing.user = "panda";
-  services.syncthing.dataDir = "/home/panda/";
-  services.syncthing.configDir = "/home/panda/.config/syncthing";
+  services.syncthing = {
+    enable = true;
+    user = "panda";
+    dataDir = "/home/panda/";
+    configDir = "/home/panda/.config/syncthing";
+  };
+  services.logind = {
+    lidSwitch = "lock";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "lock";
+  };
 
   # desktop settings
   programs.dconf.enable = true;
-
-
 
   # Configure keymap in X11
   services.xserver.xkbOptions = "eurosign:e";
@@ -91,7 +96,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    (pkgs.vim_configurable.customize {
+      name = "vim";
+      vimrcConfig.customRC = ''
+       set tabstop=2
+    '';
+    })
     pkgs.wget
     pkgs.git
     pkgs.weechat
@@ -120,11 +130,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   # services.tlp.enable = true; # for bluethooth etc # conflicts with services.power-profiles-demon
-  services.logind = {
-    lidSwitch = "lock";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "lock";
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
