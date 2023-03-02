@@ -12,6 +12,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+	
+	# to allo unfree packages like lutris
+	nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "spezi"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -51,6 +54,14 @@
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "lock";
   };
+	
+	# tells from where to boot after hibernating
+	boot.kernelParams = [ 
+		"resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
+];
+
+
+
 
   # desktop settings
   programs.dconf.enable = true;
@@ -68,6 +79,9 @@
 
 	# Enable bluetooth
   hardware.bluetooth.enable = true;
+
+	# Enable direct rendering 
+	hardware.opengl.driSupport32Bit = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -93,6 +107,7 @@
       pkgs.brave
       pkgs.joplin
       pkgs.libreoffice-qt
+			pkgs.lutris
     ];
   };
 
