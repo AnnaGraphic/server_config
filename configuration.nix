@@ -54,6 +54,11 @@
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "lock";
   };
+
+	# VM-Sachen
+	virtualisation.virtualbox.host.enable = true;
+
+
 	
 	# tells from where to boot after hibernating
 	boot.kernelParams = [ 
@@ -98,6 +103,7 @@
       "audio"
       "video"
       "networkmanager"
+			"vboxusers"
     ];
     
     packages = [
