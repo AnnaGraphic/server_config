@@ -13,7 +13,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 	
-	# to allo unfree packages like lutris
+	# to allow unfree packages like lutris
 	nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "spezi"; # Define your hostname.
@@ -58,22 +58,16 @@
 	# VM-Sachen
 	virtualisation.virtualbox.host.enable = true;
 
-
-	
 	# tells from where to boot after hibernating
 	boot.kernelParams = [ 
 		"resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
 ];
-
-
-
 
   # desktop settings
   programs.dconf.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkbOptions = "eurosign:e";
-
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -114,6 +108,7 @@
       pkgs.joplin
       pkgs.libreoffice-qt
 			pkgs.lutris
+			pkgs.vlc
     ];
   };
 
@@ -149,6 +144,10 @@
     '';
   };
 
+	fonts.fonts = [
+		pkgs.jetbrains-mono
+	];
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -176,6 +175,4 @@
 
 
 }
-
-
 
