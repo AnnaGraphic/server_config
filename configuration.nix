@@ -49,11 +49,11 @@
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
   };
-  services.logind = {
-    lidSwitch = "lock";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "lock";
-  };
+#  services.logind = {
+#    lidSwitch = "lock";
+#    lidSwitchDocked = "ignore";
+#    lidSwitchExternalPower = "lock";
+#  };
 
 	# VM-Sachen
 	virtualisation.virtualbox.host.enable = true;
@@ -126,6 +126,7 @@
     pkgs.weechat
     pkgs.mosh # mobile shell
     pkgs.libsForQt5.ark
+    pkgs.virtualboxWithExtpack
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
