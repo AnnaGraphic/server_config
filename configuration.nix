@@ -49,11 +49,14 @@
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
   };
-#  services.logind = {
-#    lidSwitch = "lock";
-#    lidSwitchDocked = "ignore";
-#    lidSwitchExternalPower = "lock";
-#  };
+
+  # konfiguriert in KDE Energy Savings
+  services.logind = {
+    # extraConfig = ''HandlePowerKey=ignore'';
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
 
 	# VM-Sachen
 	virtualisation.virtualbox.host.enable = true;
