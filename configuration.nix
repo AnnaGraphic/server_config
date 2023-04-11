@@ -85,6 +85,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Allow panda's VMs to access USB devices
+  users.extraGroups.vboxusers.members = [ "panda" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
     passwordFile = "/etc/secrets/nixospandapassword";
