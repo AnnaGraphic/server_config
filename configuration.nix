@@ -12,9 +12,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-	
-	# to allow unfree packages like lutris
-	nixpkgs.config.allowUnfree = true;
+
+  # to allow unfree packages like lutris
+  nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "spezi"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -58,12 +58,12 @@
     lidSwitchExternalPower = "ignore";
   };
 
-	# VM-Sachen
-	virtualisation.virtualbox.host.enable = true;
+  # VM-Sachen
+  virtualisation.virtualbox.host.enable = true;
 
-	# tells from where to boot after hibernating
-	boot.kernelParams = [ 
-		"resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
+  # tells from where to boot after hibernating
+  boot.kernelParams = [
+    "resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
 ];
 
   # desktop settings
@@ -79,11 +79,11 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-	# Enable bluetooth
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-	# Enable direct rendering 
-	hardware.opengl.driSupport32Bit = true;
+  # Enable direct rendering
+  hardware.opengl.driSupport32Bit = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -98,14 +98,14 @@
   users.users.panda = {
     isNormalUser = true;
     passwordFile = "/etc/secrets/nixospandapassword";
-    extraGroups = [ 
+    extraGroups = [
       "wheel"  # Enable ‘sudo’ for the user.
       "audio"
       "video"
       "networkmanager"
-			"vboxusers"
+      "vboxusers"
     ];
-    
+
     packages = [
       pkgs.firefox
       pkgs.alacritty
@@ -113,8 +113,8 @@
       pkgs.brave
       pkgs.joplin
       pkgs.libreoffice-qt
-			pkgs.lutris
-			pkgs.vlc
+      pkgs.lutris
+      pkgs.vlc
     ];
   };
 
@@ -151,9 +151,9 @@
     '';
   };
 
-	fonts.fonts = [
-		pkgs.jetbrains-mono
-	];
+  fonts.fonts = [
+    pkgs.jetbrains-mono
+  ];
 
   # List services that you want to enable:
 
