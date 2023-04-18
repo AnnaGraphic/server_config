@@ -127,8 +127,15 @@
     (pkgs.vim_configurable.customize {
       name = "vim";
       vimrcConfig.customRC = ''
-       set tabstop=2
-    '';
+        set backspace=indent,eol,start
+        set expandtab
+        set nocompatible
+        set shiftwidth=2
+        set smartindent
+        set softtabstop=2
+        set tabstop=2
+        syntax on
+      '';
     })
     pkgs.wget
     pkgs.git
