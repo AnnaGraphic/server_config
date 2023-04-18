@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./shell.c-base.org.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
