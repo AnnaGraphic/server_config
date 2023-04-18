@@ -142,6 +142,7 @@
     pkgs.weechat
     pkgs.mosh # mobile shell
     pkgs.libsForQt5.ark
+    pkgs.posix_man_pages
     pkgs.virtualboxWithExtpack
   ];
 
