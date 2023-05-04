@@ -37,6 +37,23 @@
      useXkbConfig = true; # use xkbOptions in tty.
    };
 
+  # konfiguriert in KDE Energy Savings
+  services.logind = {
+    # extraConfig = ''HandlePowerKey=ignore'';
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
+  
+  services.postgresql = {
+      enable = true;
+        ensureDatabases = [ "tictactoe" ];
+          ensureUsers = [{
+                name = "panda";
+                    ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
+                      }];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
@@ -49,14 +66,6 @@
     user = "panda";
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
-  };
-
-  # konfiguriert in KDE Energy Savings
-  services.logind = {
-    # extraConfig = ''HandlePowerKey=ignore'';
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
   };
 
   # VM-Sachen
