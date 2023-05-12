@@ -37,6 +37,9 @@
      useXkbConfig = true; # use xkbOptions in tty.
    };
 
+  #  mount storage box
+  services.davfs2.enable = true;
+
   # konfiguriert in KDE Energy Savings
   services.logind = {
     # extraConfig = ''HandlePowerKey=ignore'';
@@ -146,6 +149,7 @@
         syntax on
       '';
     })
+    pkgs.davfs2 # mount storage-box via webDav
     pkgs.wget
     pkgs.git
     pkgs.weechat
