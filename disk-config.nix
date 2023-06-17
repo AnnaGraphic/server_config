@@ -18,8 +18,9 @@
           end = "100MiB";
           bootable = true;
           content = {
-            type = "vfat";
-            name = "boot";
+            type = "filesystem";
+            format = "vfat";
+            mountpoint = "/boot";
           };
         }
         {
