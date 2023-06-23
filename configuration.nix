@@ -54,13 +54,13 @@
     lidSwitchDocked = "ignore";
     lidSwitchExternalPower = "ignore";
   };
-  
+
   services.postgresql = {
       enable = true;
         ensureDatabases = [ "tictactoe" ];
           ensureUsers = [{
-                name = "panda";
-                    ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
+            name = "panda";
+              ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
                       }];
   };
 
