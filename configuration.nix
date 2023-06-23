@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
       ./dic.nix
+      ./wetter.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
