@@ -119,22 +119,23 @@
     isNormalUser = true;
     passwordFile = "/etc/secrets/nixospandapassword";
     extraGroups = [
-      "wheel"  # Enable ‘sudo’ for the user.
       "audio"
-      "video"
       "networkmanager"
       "vboxusers"
+      "video"
+      "wheel"  # Enable ‘sudo’ for the user.
     ];
 
     packages = [
-      pkgs.firefox
       pkgs.alacritty
-      pkgs.vscodium
       pkgs.brave
+      pkgs.firefox
+      pkgs.firefox-devedition
       pkgs.joplin
       pkgs.libreoffice-qt
       pkgs.lutris
       pkgs.vlc
+      pkgs.vscodium
     ];
   };
 
@@ -164,6 +165,7 @@
     pkgs.libsForQt5.ark
     pkgs.posix_man_pages
     pkgs.virtualboxWithExtpack
+    pkgs.sxiv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
