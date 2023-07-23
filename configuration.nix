@@ -56,11 +56,11 @@
   };
 
   services.postgresql = {
-      enable = true;
-        ensureDatabases = [ "tictactoe" ];
-          ensureUsers = [{
-            name = "panda";
-              ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
+    enable = true;
+    ensureDatabases = [ "tictactoe" ];
+    ensureUsers = [{
+      name = "panda";
+      ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
                       }];
   };
 
