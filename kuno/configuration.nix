@@ -1,6 +1,7 @@
 { modulesPath, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./tictactoe-server.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
