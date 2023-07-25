@@ -23,6 +23,14 @@
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
+  programs.bash = {
+    interactiveShellInit = /* sh */ ''
+      HISTCONTROL='erasedups:ignorespace'
+      HISTSIZE=900001
+      HISTFILESIZE=$HISTSIZE
+    '';
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-label/root";
     fsType = "ext4";
