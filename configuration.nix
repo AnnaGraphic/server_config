@@ -144,6 +144,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    (pkgs.writers.writeDashBin "storagebox" ''
+      #! /usr/bin/env nix-shell
+      #! nix-shell -i bash -p ''${pkgs.sshfs}/bin/sshfs
+      # usage: storagebox
+      set -x
+      sshfs u267156@u267156.your-storagebox.de: /home/panda/storagebox/
+    '')
     (pkgs.vim_configurable.customize {
       name = "vim";
       vimrcConfig.customRC = ''
