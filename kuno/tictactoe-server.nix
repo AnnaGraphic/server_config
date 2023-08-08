@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   networking.firewall.allowedTCPPorts = [
     80
     4000
@@ -22,8 +22,16 @@
       };
     }
   ];
-
-  users.users.tictactoe = {
-    isNormalUser = true;
+  systemd.services.tictactoe-server = {
+    wantedBy = [ "multi-user.target" ];
+    environment = {
+      DATABASE_URL = "postgresql://tictactoe:tictactoe@localhost/tictactoe";
+      PORT = "4000";
+    };
+    serviceConfig = {
+      ExecStart = "${pkgs.tictactoe}/bin/tictactoe-server";
+      DynamicUser = true;
+      User = "tictactoe";
+    };
   };
 }
