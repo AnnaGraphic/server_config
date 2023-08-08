@@ -24,6 +24,10 @@
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
+  nixpkgs.overlays = [
+    (import ./pkgs)
+  ];
+
   programs.bash = {
     interactiveShellInit = /* sh */ ''
       HISTCONTROL='erasedups:ignorespace'
