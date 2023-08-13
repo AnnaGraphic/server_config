@@ -95,6 +95,9 @@ pkgs.stdenv.mkDerivation {
     # Tell the client where the server is
     export NX_SERVER_ENDPOINT=http://tictactoe.panda.krebsco.de
 
+    # Make nx available
+    export PATH=$PATH:$PWD/node_modules/.bin
+
     nx run client:build
     nx run server:build
   '';
