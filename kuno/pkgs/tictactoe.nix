@@ -13,8 +13,8 @@ let
   src = pkgs.fetchFromGitHub {
     owner = "AnnaGraphic";
     repo = "tictactoe";
-    rev = "94b8a5622e87207d490b21a29f425187bffd8901";
-    hash = "sha256-APq0AexY8TF78qHflyVMMxkGcVIMenJjHUQA44sDAg8=";
+    rev = "99c5814db0a42f278904c3dce6016e8412e42020";
+    hash = "sha256-1iopJFE8KvUwsGLTnNr4JhZhHBBTmDepbulS6eShRO8=";
   };
 
   # Make contents of JSON files available in Nix.
