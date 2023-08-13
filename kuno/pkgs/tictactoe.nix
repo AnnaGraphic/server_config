@@ -17,8 +17,9 @@ let
     hash = "sha256-APq0AexY8TF78qHflyVMMxkGcVIMenJjHUQA44sDAg8=";
   };
 
-  # Make contents JSON files available in Nix.
+  # Make contents of JSON files available in Nix.
   packageLock = readJSON (src + "/package-lock.json");
+  clientProject = readJSON (src + "/apps/client/project.json");
   serverProject = readJSON (src + "/apps/server/project.json");
 
   # List of all (downloaded) tarballs mentioned in package-lock.json for
@@ -91,7 +92,8 @@ pkgs.stdenv.mkDerivation {
     # Allow nx to write to node_modules/.cache
     chmod -R +w node_modules
 
-    npm run build
+    nx run client:build
+    nx run server:build
   '';
 
   installPhase = /* sh */ ''
@@ -99,6 +101,7 @@ pkgs.stdenv.mkDerivation {
 
     mkdir $out/lib
     ln -s ${node_modules} $out/lib/node_modules
+    cp -a ${clientProject.targets.build.options.outputPath} $out/lib/client
     cp -a ${serverProject.targets.build.options.outputPath} $out/lib/server
     cp -a apps/sql $out/lib/sql
 
