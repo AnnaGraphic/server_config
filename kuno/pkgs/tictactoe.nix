@@ -92,6 +92,9 @@ pkgs.stdenv.mkDerivation {
     # Allow nx to write to node_modules/.cache
     chmod -R +w node_modules
 
+    # Tell the client where the server is
+    export NX_SERVER_ENDPOINT=http://tictactoe.panda.krebsco.de
+
     nx run client:build
     nx run server:build
   '';

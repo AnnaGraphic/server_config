@@ -4,11 +4,12 @@
     4000
   ];
   services.nginx.enable = true;
-  services.nginx.virtualHosts._default = {
+  services.nginx.virtualHosts."tictactoe.panda.krebsco.de" = {
     listen = [
       { addr = "0.0.0.0"; port = 80; }
     ];
-    locations."/".proxyPass = "http://127.0.0.1:3333";
+    locations."/".root = "${pkgs.tictactoe}/lib/client";
+    locations."/api".proxyPass = "http://127.0.0.1:4000";
   };
   services.postgresql.enable = true;
   services.postgresql.ensureDatabases = [
