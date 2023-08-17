@@ -1,4 +1,4 @@
-{ modulesPath, ... }: {
+{ modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ./nameserver.nix
@@ -54,6 +54,10 @@
     ];
     isNormalUser = true;
     passwordFile = "/etc/nixos/secrets/panda.hashedPassword";
+    packages = [
+      pkgs.tmux
+      pkgs.weechat
+    ];
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
