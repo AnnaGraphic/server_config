@@ -3,6 +3,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     ./modules/htgen.nix
     ./nameserver.nix
+    ./paste.nix
     ./tictactoe-server.nix
   ];
 
