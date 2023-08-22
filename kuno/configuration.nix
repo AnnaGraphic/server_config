@@ -50,6 +50,9 @@
     fsType = "vfat";
   };
 
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "panda@c-base.org";
+
   services.openssh.enable = true;
 
   users.users.panda = {
