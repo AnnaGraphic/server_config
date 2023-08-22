@@ -24,6 +24,8 @@
     "nvme"
   ];
 
+  networking.firewall.allowedTCPPorts = [ 443 ]; # https
+
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
