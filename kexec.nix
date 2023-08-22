@@ -4,7 +4,7 @@
 # this will work only under qemu, uncomment next line for full image
 # <nixpkgs/nixos/modules/installer/netboot/netboot-minimal.nix>
     <nixpkgs/nixos/modules/installer/netboot/netboot.nix>
-      <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
+    <nixpkgs/nixos/modules/profiles/qemu-guest.nix>
   ];
 
 # stripped down version of https://github.com/cleverca22/nix-tests/tree/master/kexec
