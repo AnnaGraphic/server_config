@@ -1,6 +1,7 @@
 { modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./modules/htgen.nix
     ./nameserver.nix
     ./tictactoe-server.nix
   ];
