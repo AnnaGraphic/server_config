@@ -2,4 +2,5 @@ $TTL 60
 @ 3600 IN SOA panda.krebsco.de. panda.c-base.org. 0 7200 3600 86400 3600
 @ 3600 IN NS kuno
 kuno A 130.61.237.100
+paste A 130.61.237.100
 tictactoe A 130.61.237.100
