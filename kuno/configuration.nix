@@ -1,6 +1,7 @@
 { modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./configs/textadventure.nix
     ./modules/htgen.nix
     ./nameserver.nix
     ./paste.nix
