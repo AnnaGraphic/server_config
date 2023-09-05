@@ -3,4 +3,5 @@ $TTL 60
 @ 3600 IN NS kuno
 kuno A 130.61.237.100
 paste A 130.61.237.100
+textadventure A 130.61.237.100
 tictactoe A 130.61.237.100
