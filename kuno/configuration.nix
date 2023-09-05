@@ -2,10 +2,10 @@
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ./configs/textadventure.nix
+    ./configs/tictactoe.nix
     ./modules/htgen.nix
     ./nameserver.nix
     ./paste.nix
-    ./tictactoe-server.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
