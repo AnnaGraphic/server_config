@@ -151,7 +151,7 @@
       set -x
       sshfs u267156@u267156.your-storagebox.de: /home/panda/storagebox/
     '')
-    (pkgs.vim_configurable.customize {
+    (pkgs.vim-full.customize {
       name = "vim";
       vimrcConfig.customRC = ''
         set backspace=indent,eol,start
@@ -161,8 +161,14 @@
         set smartindent
         set softtabstop=2
         set tabstop=2
+        set undodir=$HOME/.cache/vim/undo
+        set undofile
+        set undolevels=10000
         syntax on
       '';
+      vimrcConfig.packages.myVimPackage.start = [
+        pkgs.vimPlugins.undotree
+      ];
     })
     pkgs.davfs2 # mount storage-box via webDav
     pkgs.wget
@@ -174,7 +180,7 @@
     pkgs.virtualboxWithExtpack
     pkgs.sxiv
   ];
-  environmen.variables = {
+  environment.variables = {
     "EDITOR" = "vim";
   }
 ;
