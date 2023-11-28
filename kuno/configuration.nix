@@ -1,6 +1,7 @@
 { modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ./configs/jokes.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
     ./modules/htgen.nix
