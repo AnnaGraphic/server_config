@@ -78,7 +78,7 @@
       "wheel"
     ];
     isNormalUser = true;
-    passwordFile = "/etc/nixos/secrets/panda.hashedPassword";
+    hashedPasswordFile = "/etc/nixos/secrets/panda.hashedPassword";
     packages = [
       pkgs.tmux
       pkgs.weechat
