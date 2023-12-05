@@ -16,6 +16,7 @@
         add_header Access-Control-Allow-Origin "*" always;
       '';
     };
+    enableACME = true;
   };
   systemd.services.jokes-server = {
     wantedBy = [ "multi-user.target" ];
