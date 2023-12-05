@@ -12,7 +12,8 @@
     locations."/api" = {
       proxyPass = "http://127.0.0.1:4001";
       extraConfig = ''
-        add_header Access-Control-Allow-Origin "*";
+        add_header Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS" always;
+        add_header Access-Control-Allow-Origin "*" always;
       '';
     };
   };
