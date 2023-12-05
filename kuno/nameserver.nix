@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   networking.firewall.allowedUDPPorts = [
     53 # domain
@@ -5,7 +6,7 @@
 
   services.knot = {
     enable = true;
-    extraConfig = /* yaml */ ''
+    settingsFile = pkgs.writeText "knot.yml" ''
       server:
         listen: 10.0.0.197@53
 
