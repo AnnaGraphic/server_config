@@ -113,11 +113,11 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
-    passwordFile = "/etc/secrets/nixospandapassword";
+    hashedPasswordFile = "/etc/secrets/nixospandapassword";
   };
   users.users.panda = {
     isNormalUser = true;
-    passwordFile = "/etc/secrets/nixospandapassword";
+    hashedPasswordFile = "/etc/secrets/nixospandapassword";
     extraGroups = [
       "audio"
       "networkmanager"
@@ -200,7 +200,7 @@
     '';
   };
 
-  fonts.fonts = [
+  fonts.packages = [
     pkgs.jetbrains-mono
   ];
 
