@@ -26,6 +26,22 @@
     "nvme"
   ];
 
+  environment.systemPackages = [
+    (pkgs.vim_configurable.customize {
+        name = "vim";
+        vimrcConfig.customRC = ''
+          set backspace=indent,eol,start
+          set expandtab
+          set nocompatible
+          set shiftwidth=2
+          set smartindent
+          set softtabstop=2
+          set tabstop=2
+          syntax on
+        '';
+      })
+  ];
+
   networking.firewall.allowedTCPPorts = [ 443 ]; # https
 
   networking.useDHCP = false;
