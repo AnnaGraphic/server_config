@@ -5,9 +5,6 @@
   services.ferretdb.enable = true;
   services.nginx.enable = true;
   services.nginx.virtualHosts."jokes.panda.krebsco.de" = {
-    listen = [
-      { addr = "0.0.0.0"; port = 80; }
-    ];
     # locations."/".root = "${pkgs.jokes}/lib/client";
     locations."/api" = {
       proxyPass = "http://127.0.0.1:4001";
@@ -17,6 +14,7 @@
       '';
     };
     enableACME = true;
+    addSSL = true;
   };
   systemd.services.jokes-server = {
     wantedBy = [ "multi-user.target" ];
