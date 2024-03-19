@@ -135,7 +135,21 @@
       pkgs.libreoffice-qt
       pkgs.lutris
       pkgs.vlc
-      pkgs.vscodium
+      (pkgs.vscode-with-extensions.override {
+        vscode = pkgs.vscodium;
+        vscodeExtensions = [
+          pkgs.vscode-extensions.github.copilot
+          pkgs.vscode-extensions.github.copilot-chat
+          pkgs.vscode-extensions.vscodevim.vim
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "LiveServer";
+            publisher = "ritwickdey";
+            version = "5.6.1";
+            sha256 = "sha256-QPMZMttYV+dQfWTniA7nko7kXukqU9g6Wj5YDYfL6hw";
+          }
+         ];
+      })
     ];
   };
 
