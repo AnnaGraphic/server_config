@@ -2,11 +2,11 @@
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ./configs/jokes.nix
+    ./configs/nameserver.nix
+    ./configs/paste.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
     ./modules/htgen.nix
-    ./nameserver.nix
-    ./paste.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
