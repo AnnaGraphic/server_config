@@ -3,6 +3,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     ./configs/jokes.nix
     ./configs/nameserver.nix
+    ./configs/nginx.nix
     ./configs/paste.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
