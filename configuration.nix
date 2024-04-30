@@ -11,6 +11,8 @@
       ./shell.c-base.org.nix
       ./dic.nix
       ./wetter.nix
+      ./configs/mycelium.nix
+      ./modules/mycelium.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
