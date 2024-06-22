@@ -26,6 +26,7 @@
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  networking.extraHosts = builtins.readFile /home/panda/Sync/hosts;
   networking.hostName = "spezi"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
