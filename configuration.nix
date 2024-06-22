@@ -47,6 +47,27 @@
      useXkbConfig = true; # use xkbOptions in tty.
    };
 
+  services.borgbackup.jobs.spezi-home-panda-backup_komplizin = {
+    paths = "/home";
+    encryption.mode = "none";
+    environment.BORG_RSH = "ssh -i /home/panda/.ssh/id_rsa -o UserKnownHostsFile=/home/panda/.ssh/known_hosts";
+    exclude = [
+      "/home/*/tmp"
+      "/home/*/.cache"
+      "/home/*/.vscode-oss"
+      "/home/*/.npm"
+      "/home/*/.mozilla"
+      "/home/*/VirtualBox VMs"
+      "/home/*/Downloads"
+      "/home/*/projekte/*/node_modules"
+      "/home/*/.local"
+      "/home/*/.steam"
+    ];
+    repo = "ssh://root@komplizin.m:22/backups/spezi-home-panda-backup_komplizin";
+    compression = "auto,zstd";
+    startAt = "*-*-* 04:00:00";
+  };
+
   #  mount storage box
   services.davfs2.enable = true;
 
