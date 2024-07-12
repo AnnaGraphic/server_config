@@ -1,5 +1,5 @@
 # Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
+# your system.  Help is available in the configuration.nix(4) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
@@ -12,7 +12,8 @@
       ./dic.nix
       ./wetter.nix
       ./configs/mycelium.nix
-      ./modules/mycelium.nix
+     # ./modules/mycelium.nix
+     # ./openvpn/c-base/default.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -71,6 +72,8 @@
   #  mount storage box
   services.davfs2.enable = true;
 
+  services.ferretdb.enable = true;
+
   # konfiguriert in KDE Energy Savings
   services.logind = {
     # extraConfig = ''HandlePowerKey=ignore'';
@@ -81,11 +84,15 @@
 
   services.postgresql = {
     enable = true;
-    ensureDatabases = [ "tictactoe" ];
+    ensureDatabases = [
+      "panda"
+      "tictactoe"
+      "memory1312"
+    ];
     ensureUsers = [{
       name = "panda";
-      ensurePermissions."DATABASE tictactoe" = "ALL PRIVILEGES";
-                      }];
+      ensureDBOwnership = true; # ownership only via SQL commands
+    }];
   };
 
   # Enable the X11 windowing system.
