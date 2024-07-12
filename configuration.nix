@@ -110,8 +110,15 @@
     configDir = "/home/panda/.config/syncthing";
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+      enable = true;
+        setSocketVariable = true;
+  };
+
   # VM-Sachen
   virtualisation.virtualbox.host.enable = true;
+  #virtualisation.restrictNetwork = false;
 
   # tells from where to boot after hibernating
   boot.kernelParams = [
@@ -141,6 +148,7 @@
   # services.xserver.libinput.enable = true;
 
   # Allow panda's VMs to access USB devices
+  users.extraGroups.docker.members = [ "panda" ];
   users.extraGroups.vboxusers.members = [ "panda" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
