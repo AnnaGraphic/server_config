@@ -11,6 +11,7 @@
       ./shell.c-base.org.nix
       ./dic.nix
       ./wetter.nix
+      ./configs/alacritty.nix
       ./configs/mycelium.nix
      # ./modules/mycelium.nix
      # ./openvpn/c-base/default.nix
@@ -158,7 +159,7 @@
     ];
 
     packages = [
-      pkgs.alacritty
+      pkgs.alacritty-panda # use alacritty wrapper defined in configs/alacritty.nix
       pkgs.brave
       pkgs.firefox
       pkgs.firefox-devedition
