@@ -96,6 +96,21 @@
     }];
   };
 
+#  services.udev.extraRules = /* udev */ ''
+#    SUBSYSTEM=="tty", ACTION=="add", ENV{ID_MODEL}=="flow3r", \
+#    SYMLINK+="flow3r", GROUP="wheel", \
+#    RUN+="${pkgs.writers.writeDash "piep" ''
+#      set -efu
+#      /run/wrappers/bin/sudo \
+#          -u panda \
+#          ${pkgs.coreutils}/bin/env \
+#              DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+#              ${pkgs.libnotify}/bin/notify-send "flow3r im flash mode"
+#    ''}"
+#  '';
+
+  services.wordpress.sites."localhost" = {};
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
