@@ -250,6 +250,8 @@
     pkgs.libsForQt5.ark
     pkgs.posix_man_pages
     pkgs.virtualboxWithExtpack
+    # filemanager config under ~/.config/ranger
+    pkgs.ranger
     pkgs.sxiv
   ];
   environment.variables = {
