@@ -176,6 +176,7 @@
     isNormalUser = true;
     hashedPasswordFile = "/etc/secrets/nixospandapassword";
     extraGroups = [
+      "adbusers"
       "audio"
       "networkmanager"
       "vboxusers"
