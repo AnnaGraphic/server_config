@@ -7,9 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../pkgs/dic.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
-      ./dic.nix
       ./wetter.nix
       ./configs/alacritty.nix
       ./configs/mycelium.nix
