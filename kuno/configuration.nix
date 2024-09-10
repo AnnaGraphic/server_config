@@ -1,4 +1,4 @@
-{ modulesPath, pkgs, ... }: {
+{ config, modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ./configs/jokes.nix
@@ -43,10 +43,29 @@
       })
   ];
 
-  networking.firewall.allowedTCPPorts = [ 443 ]; # https
+  networking.firewall.allowedTCPPorts = [
+    443  # https
+  ];
+  networking.firewall.allowedUDPPorts = [
+    config.networking.wireguard.interfaces.wg0.listenPort # 51820
+  ];
 
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
+
+  networking.wireguard.interfaces.wg0 = {
+    ips = [ "10.100.0.1/24" ];
+    allowedIPsAsRoutes = true;
+    listenPort = 51820;
+    privateKeyFile = "/etc/nixos/secrets/wireguard-private-key";
+    peers= [
+      # spezi
+      {
+        publicKey = "ewHBJr8wLzCkZjfJVz5+wp0ZD/IeOibhGkmkJ8aqaQ0=";
+        allowedIPs = [ "10.100.0.2/32" ];
+      }
+    ];
+  };
 
   nixpkgs.overlays = [
     (import ./pkgs)
