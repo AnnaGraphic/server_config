@@ -4,11 +4,11 @@
 
 set -efu
 
-name=kuno
-host=130.61.237.100
+name=komplizin
+host=komplizin.m
 
 rsync -va /home/panda/Sync/shared-secrets/hosts root@"$host":/etc/panda/hosts
-rsync -va /home/panda/Sync/kuno-secrets/ root@"$host":/etc/panda/secrets/
+rsync -va /home/panda/Sync/komplizin-secrets/ root@"$host":/etc/panda/secrets/
 rsync -va --delete --exclude=.git --exclude=/configuration.nix "$HOME"/projekte/server/ root@"$host":/etc/nixos/
 
 ssh root@"$host" ln -vsnf "$name"/configuration.nix /etc/nixos/configuration.nix

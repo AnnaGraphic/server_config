@@ -2,11 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../configs/wireguard.nix
       ./hardware-configuration.nix
       ./configs/mycelium.nix
     ];
@@ -87,7 +88,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.panda = {
     isNormalUser = true;
-    hashedPassword = "$6$H3FjVbsUn1ghFdzU$n1pP.ZsE8YP6uwKvkfvI/9eCyEWD.URa7GuOoLRmYUpLH8kkAje2LsattuyKCs6.Z4usoGBLcn/opjb7hbBC4/";
+    hashedPasswordFile = "/etc/panda/secrets/panda.hashedPassword";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = [
      pkgs.alacritty
@@ -138,26 +139,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true; # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  networking.firewall.allowedUDPPorts = [
-    51820 # wireguard
-  ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-  networking.wireguard.interfaces.wg0 = {
-    ips = [ "10.100.0.3/24" ];
-    allowedIPsAsRoutes = true;
-    listenPort = 51820;
-    privateKeyFile = "/etc/nixos/secrets/wireguard-private-key";
-    peers= [
-      # kuno
-      {
-        publicKey = "5o4nO1O3pLDTCud1KiPh7eBElBgiyV1W5xOdh55S6lo=";
-        allowedIPs = [ "10.100.0.0/24" ];
-        endpoint = "kuno.panda.krebsco.de:51820";
-        persistentKeepalive = 61;
-      }
-    ];
-  };
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
