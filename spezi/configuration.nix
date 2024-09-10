@@ -282,11 +282,34 @@
   # services.openssh.enable = true;
   # services.tlp.enable = true; # for bluethooth etc # conflicts with services.power-profiles-demon
 
+  # BEGIN wireguard config
+
+  # XXX Hostnames are defined in /home/panda/Sync/shared-secrets/hosts
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [
+    config.networking.wireguard.interfaces.wg0.listenPort # 51820
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  networking.wireguard.interfaces.wg0 = {
+    ips = [ "10.100.0.2/24" ];
+    allowedIPsAsRoutes = true;
+    listenPort = 51820;
+    privateKeyFile = "/etc/secrets/wireguard-private-key";
+    peers = [
+      # kuno
+      {
+        publicKey = "5o4nO1O3pLDTCud1KiPh7eBElBgiyV1W5xOdh55S6lo=";
+        allowedIPs = [ "10.100.0.0/24" ];
+        endpoint = "kuno.panda.krebsco.de:51820";
+        persistentKeepalive = 61;
+      }
+    ];
+  };
+  # END wireguard config
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
