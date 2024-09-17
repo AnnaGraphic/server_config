@@ -6,6 +6,7 @@
     ./configs/nameserver.nix
     ./configs/nginx.nix
     ./configs/paste.nix
+    ./configs/portfolio-panda.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
     ./modules/htgen.nix
