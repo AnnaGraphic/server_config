@@ -15,9 +15,7 @@
   services.postgresql.ensureUsers = [
     {
       name = "tictactoe";
-      ensurePermissions = {
-        "DATABASE tictactoe" = "ALL PRIVILEGES";
-      };
+      ensureDBOwnership = true; # ownership only via SQL commands
     }
   ];
   systemd.services.tictactoe-server = {
