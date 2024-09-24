@@ -29,6 +29,21 @@
     "nvme"
   ];
 
+  services.postgresql = {
+    authentication = ''
+      host all all all password
+    '';
+    enable = true;
+    enableTCPIP = true;
+    ensureDatabases = [
+      "socialnetwork"
+    ];
+    ensureUsers = [{
+      name = "socialnetwork";
+      ensureDBOwnership = true; # ownership only via SQL commands
+    }];
+  };
+
   environment.systemPackages = [
     (pkgs.vim_configurable.customize {
         name = "vim";
@@ -48,6 +63,7 @@
   networking.firewall.allowedTCPPorts = [
     443  # https
   ];
+  networking.firewall.interfaces.wg0.allowedTCPPorts = [ 5432 ];
 
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
