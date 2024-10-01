@@ -11,7 +11,7 @@
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
-    ../pkgs/dic.nix
+    ../configs/dic.nix
     ./configs/mycelium.nix
   ];
 

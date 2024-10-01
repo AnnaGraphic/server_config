@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../configs/wireguard.nix
-      ../pkgs/dic.nix
+      ../configs/dic.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
       ./wetter.nix
