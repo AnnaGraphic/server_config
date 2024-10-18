@@ -1,0 +1,3 @@
+[submodule "kleingeist"]
+	path = kleingeist
+	url = https://github.com/samueldr/cross-system
