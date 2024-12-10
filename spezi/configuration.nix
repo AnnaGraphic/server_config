@@ -244,7 +244,7 @@
     pkgs.weechat
     pkgs.mosh # mobile shell
     pkgs.libsForQt5.ark
-    pkgs.posix_man_pages
+    pkgs.man-pages-posix
     # filemanager config under ~/.config/ranger
     pkgs.ranger
     pkgs.sxiv
