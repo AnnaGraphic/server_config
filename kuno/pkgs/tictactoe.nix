@@ -53,6 +53,7 @@ let
       src = pkgs.runCommand "tictactoe-node_modules-src" {} /* sh */ ''
         mkdir -p $out/.npm
         ln -s ${cacache} $out/.npm/_cacache
+        ln -s ${src + "/package.json"} $out/package.json
         ln -s ${src + "/package-lock.json"} $out/package-lock.json
       '';
       buildInputs = [ pkgs.nodejs ];
