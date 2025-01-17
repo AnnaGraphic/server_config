@@ -199,8 +199,8 @@
           {
             name = "LiveServer";
             publisher = "ritwickdey";
-            version = "5.6.1";
-            sha256 = "sha256-QPMZMttYV+dQfWTniA7nko7kXukqU9g6Wj5YDYfL6hw";
+            version = "5.7.9";
+            sha256 = "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=";
           }
          ];
       })
