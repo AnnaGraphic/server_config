@@ -13,6 +13,7 @@
     <nixos-wsl/modules>
     ../configs/dic.nix
     ./configs/mycelium.nix
+    ./configs/vault.nix
   ];
 
   #wsl.wslConf.automount.root = "/mnt"; # default true
@@ -33,6 +34,8 @@
       network.generateResolvConf = !config.services.resolved.enable;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
     (pkgs.vim-full.customize {
