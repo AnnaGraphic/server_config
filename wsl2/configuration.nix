@@ -80,7 +80,7 @@
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMe6DnF20BPefG3m9Naf/PdTJ/pjC1TTpsXtZQQ52We panda@spezi"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMe6DnF20BPefG3m9Naf/PdTJ/pjC1TTpsXtZQQ52We panda@spezi" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxF/c1Sp2gRupu/zSjWsxU2AbLfhAQb2MboZXio1du1 panda@kuno"
   ];
 
   # This value determines the NixOS release from which the default
