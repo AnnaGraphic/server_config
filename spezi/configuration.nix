@@ -14,7 +14,6 @@
       ./wetter.nix
       ./configs/alacritty.nix
       ./configs/mycelium.nix
-     # ./modules/mycelium.nix
      # ./openvpn/c-base/default.nix
     ];
 
