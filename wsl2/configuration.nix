@@ -35,6 +35,8 @@
     };
   };
 
+  networking.hostName = "wsl2";
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
