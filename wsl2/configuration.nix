@@ -70,7 +70,11 @@
       enable = true;
       package = pkgs.nix-ld-rs;
   };
-  
+
+  security.pki.certificateFiles = [
+    ../certs/panda-root-ca-2025-1.crt
+  ];
+
   # Enable OpenSSH daemon
   services.openssh.enable = true;
 
