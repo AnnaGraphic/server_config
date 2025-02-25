@@ -30,6 +30,10 @@
     "nvme"
   ];
 
+  security.pki.certificateFiles = [
+    ../certs/panda-root-ca-2025-1.crt
+  ];
+
   services.postgresql = {
     authentication = ''
       host all all all password

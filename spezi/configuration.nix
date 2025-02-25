@@ -51,6 +51,10 @@
      useXkbConfig = true; # use xkbOptions in tty.
    };
 
+  security.pki.certificateFiles = [
+    ../certs/panda-root-ca-2025-1.crt
+  ];
+
   services.borgbackup.jobs.spezi-home-panda-backup_komplizin = {
     paths = "/home";
     encryption.mode = "none";
