@@ -10,6 +10,7 @@
     ./configs/portfolio-panda.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
+    ./configs/vault.nix
     ./modules/htgen.nix
   ];
 
