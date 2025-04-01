@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       #../configs/wireguard.nix
       ../configs/dic.nix
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
       ./shell.c-base.org.nix
       ./wetter.nix
       ./configs/alacritty.nix
