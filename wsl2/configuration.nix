@@ -35,6 +35,7 @@
     };
   };
 
+  networking.extraHosts = builtins.readFile /etc/panda/hosts;
   networking.hostName = "wsl2";
 
   nixpkgs.config.allowUnfree = true;
