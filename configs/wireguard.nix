@@ -19,6 +19,17 @@ in {
     config.networking.wireguard.interfaces.wg0.listenPort # 51820
   ];
 
+  networking.interfaces.wg0.ipv4.routes =
+    if config.networking.hostName == "kuno" then
+      [
+        {
+          address = "10.100.0.0";
+          prefixLength = 24;
+        }
+      ]
+    else
+      [];
+
   networking.wireguard.interfaces.wg0 = {
     ips = [ "${cfg.ipv4addr}/24" ];
     allowedIPsAsRoutes = true;
