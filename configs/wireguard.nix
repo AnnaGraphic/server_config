@@ -12,6 +12,7 @@ in {
     10.100.0.1 kuno.w
     10.100.0.2 spezi.w
     10.100.0.3 komplizin.w
+    10.100.0.4 prima.w
     10.100.0.6 wsl2.w
   '';
 
@@ -47,6 +48,16 @@ in {
           {
             publicKey = "n4nIrbchXj7cYVL8uPPH8dkO31Gi3pm8dvBx5BT0JH4=";
             allowedIPs = [ "10.100.0.3/32" ];
+          }
+          # prima
+          {
+            publicKey = "LzElUKPVvjC+fxoQ0URkkSiV058yvDqo2cUv7E129mU=";
+            allowedIPs = [ "10.100.0.4/32" ];
+          }
+          # pixel5
+          {
+            publicKey = "Wn/MrINbn5/LeNq8U7dhgjVafbh2CNi0mMyunMMUsWo=";
+            allowedIPs = [ "10.100.0.5/32" ];
           }
         ]
       else
