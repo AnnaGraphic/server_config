@@ -2,13 +2,17 @@
   quirks.kuno.ipv4addr = "10.100.0.1";
   quirks.spezi.ipv4addr = "10.100.0.2";
   quirks.komplizin.ipv4addr = "10.100.0.3";
+  quirks.wsl2.ipv4addr = "10.100.0.6";
 
   cfg = quirks.${config.networking.hostName};
 in {
+  systemd.network.networks.wg0.linkConfig.MTUBytes = "1400";
+
   networking.extraHosts = ''
     10.100.0.1 kuno.w
     10.100.0.2 spezi.w
     10.100.0.3 komplizin.w
+    10.100.0.6 wsl2.w
   '';
 
   networking.firewall.allowedUDPPorts = [
