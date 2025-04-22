@@ -23,6 +23,7 @@
   # Define on which hard drive you want to install Grub.
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   
+  networking.extraHosts = builtins.readFile /etc/panda/hosts;
   networking.hostName = "komplizin"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
