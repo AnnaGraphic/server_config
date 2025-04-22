@@ -17,6 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  networking.extraHosts = builtins.readFile /etc/panda/hosts;
   networking.hostName = "kuno";
 
   boot.kernelParams = [
