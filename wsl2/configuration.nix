@@ -23,7 +23,6 @@
     defaultUser = "nixos";
     # accessing windows paths can be as slow as 300x which is bad for auto completion
     interop.includePath = false;
-    nativeSystemd = true;
     populateBin = lib.mkIf config.services.envfs.enable (lib.mkForce false);
     startMenuLaunchers = true;
     # rebuild less things
