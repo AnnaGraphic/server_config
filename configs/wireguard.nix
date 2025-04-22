@@ -59,6 +59,11 @@ in {
             publicKey = "Wn/MrINbn5/LeNq8U7dhgjVafbh2CNi0mMyunMMUsWo=";
             allowedIPs = [ "10.100.0.5/32" ];
           }
+          # wsl2
+          {
+            publicKey = "J/kVPBEHpM9SSowGgwYUwDl5MuyNN6jGB3fA61BBhkQ=";
+            allowedIPs = [ "10.100.0.6/32" ];
+          }
         ]
       else
         [

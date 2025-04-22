@@ -12,6 +12,7 @@
     # include NixOS-WSL modules
     <nixos-wsl/modules>
     ../configs/dic.nix
+    ../configs/wireguard.nix
     ./configs/mycelium.nix
     ./configs/vault.nix
   ];
