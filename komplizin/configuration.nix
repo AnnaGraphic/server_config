@@ -29,6 +29,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  nix.gc.automatic = true;
+  nix.gc.dates = "monthly";
+  nix.gc.options = "--delete-older-than 30d";
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
