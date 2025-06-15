@@ -71,9 +71,12 @@
     443  # https
   ];
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 5432 ];
-
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
+
+  nix.gc.automatic = true;
+  nix.gc.dates = "monthly";
+  nix.gc.options = "--delete-older-than 30d";
 
   nixpkgs.overlays = [
     (import ./pkgs)
