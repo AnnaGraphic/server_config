@@ -3,6 +3,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     ../configs/wireguard.nix
     ./configs/jokes.nix
+    ./configs/letter_basic-auth.nix
     ./configs/mycelium.nix
     ./configs/nameserver.nix
     ./configs/nginx.nix
