@@ -38,6 +38,19 @@
     ../certs/panda-root-ca-2025-1.crt
   ];
 
+  # in order to mount storagebox
+  fileSystems."/mnt/illus_und_arbeit" = {
+    device = "//u267156-sub6.your-storagebox.de/u267156-sub6";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/panda/secrets/storagebox.credentials"
+      "iocharset=utf8"
+      "vers=3.0"
+      "nounix"
+      "noserverino"
+    ];
+  };
+
   services.postgresql = {
     authentication = ''
       host all all all password
@@ -54,6 +67,7 @@
   };
 
   environment.systemPackages = [
+    pkgs.cifs-utils
     (pkgs.vim_configurable.customize {
         name = "vim";
         vimrcConfig.customRC = ''
