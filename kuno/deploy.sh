@@ -14,6 +14,9 @@ rsync -v -rlptD --delete --exclude=.git --exclude=/configuration.nix --exclude=k
 # for /server/kuno/pkgs/portfolio
 rsync -v -rlptD --delete --exclude=.git /home/panda/projekte/portfolio/ root@"$host":/etc/panda/portfolio/
 
+# ensure mountpoint for storage box:
+ssh root@"$host" mkdir -p /mnt/arbeit_und_illustration
+
 ssh root@"$host" ln -vsnf "$name"/configuration.nix /etc/nixos/configuration.nix
 
 ssh root@"$host" nixos-rebuild switch
