@@ -14,7 +14,7 @@ rsync -rlptD --delete \
     --exclude=.git \
     --exclude=/configuration.nix \
     --exclude=/kleingeist \
-    "$HOME"/projekte/server/ root@"$host":/etc/nixos/
+    "$HOME"/Sync/code/server/ root@"$host":/etc/nixos/
 
 ssh root@"$host" ln -vsnf "$name"/configuration.nix /etc/nixos/configuration.nix
 
