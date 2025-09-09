@@ -12,7 +12,7 @@ rsync -v -rlptD /home/panda/Sync/secrets/kuno/ root@"$host":/etc/panda/secrets/
 rsync -v -rlptD --delete --exclude=.git --exclude=/configuration.nix --exclude=kleingeist/ "$HOME"/Sync/code/server/ root@"$host":/etc/nixos/
 
 # for /server/kuno/pkgs/portfolio
-rsync -v -rlptD --delete --exclude=.git /home/panda/projekte/portfolio/ root@"$host":/etc/panda/portfolio/
+rsync -v -rlptD --delete --exclude=.git /home/panda/Sync/code/portfolio/ root@"$host":/etc/panda/portfolio/
 
 # ensure mountpoint for storage box:
 ssh root@"$host" mkdir -p /mnt/arbeit_und_illustration
