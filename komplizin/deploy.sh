@@ -7,8 +7,8 @@ set -efu
 name=komplizin
 host=komplizin.m
 
-rsync -rlptD /home/panda/Sync/shared-secrets/hosts root@"$host":/etc/panda/hosts
-rsync -rlptD /home/panda/Sync/komplizin-secrets/ root@"$host":/etc/panda/secrets/
+rsync -rlptD /home/panda/Sync/secrets/shared/hosts root@"$host":/etc/panda/hosts
+rsync -rlptD /home/panda/Sync/secrets/komplizin root@"$host":/etc/panda/secrets/
 rsync -rlptD --delete \
     --exclude=.git \
     --exclude=/configuration.nix \
