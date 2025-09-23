@@ -283,7 +283,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
   # services.tlp.enable = true; # for bluethooth etc # conflicts with services.power-profiles-demon
 
   # Copy the NixOS configuration file and link it from the resulting system
