@@ -175,6 +175,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
     hashedPasswordFile = "/etc/panda/secrets/nixospandapassword";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHot6G5XcWrFMEaHuGo+Zj8ERpE7TA/QK4F3I/uK+QtK panda@udo"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMe6DnF20BPefG3m9Naf/PdTJ/pjC1TTpsXtZQQ52We panda@spezi"
+    ];
   };
   users.users.panda = {
     isNormalUser = true;
