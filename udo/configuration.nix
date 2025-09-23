@@ -13,7 +13,7 @@
       ./shell.c-base.org.nix
       ./wetter.nix
       ./configs/alacritty.nix
-   #   ./configs/mycelium.nix
+      ./configs/mycelium.nix
       ./configs/vault.nix
      # ./openvpn/c-base/default.nix
     ];
