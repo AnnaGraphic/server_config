@@ -31,7 +31,7 @@
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-#  networking.extraHosts = builtins.readFile /home/panda/Sync/shared-secrets/hosts;
+  networking.extraHosts = builtins.readFile /home/panda/Sync/secrets/shared/hosts;
   networking.hostName = "udo"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
