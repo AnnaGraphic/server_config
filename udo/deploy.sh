@@ -6,9 +6,7 @@ set -efu
 
 name=udo
 host=udo.m
-host=localhost
 
-rsync -rlptD "$HOME"/Sync/secrets/shared/hosts root@"$host":/etc/panda/hosts
 rsync -rlptD "$HOME"/Sync/secrets/udo/ root@"$host":/etc/panda/secrets/
 rsync -rlptD --delete \
     --exclude=.git \
