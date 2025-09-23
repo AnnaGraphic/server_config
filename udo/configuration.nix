@@ -170,6 +170,8 @@
   users.extraGroups.docker.members = [ "panda" ];
   users.extraGroups.vboxusers.members = [ "panda" ];
 
+  users.mutableUsers = false;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
     hashedPasswordFile = "/etc/panda/secrets/nixospandapassword";
