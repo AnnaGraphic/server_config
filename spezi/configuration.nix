@@ -32,7 +32,7 @@
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.extraHosts = builtins.readFile /home/panda/Sync/shared-secrets/hosts;
+  networking.extraHosts = builtins.readFile /home/panda/Sync/secrets/shared/hosts;
   networking.hostName = "spezi"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -173,6 +173,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
     hashedPasswordFile = "/etc/panda/secrets/nixospandapassword";
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfP2xrEhEJn/MKTFbO6ATCqVr5jeqHqyRP9c4KKCA6eZDoZyovZQL6pM80b566rzpJGvLeRSlU10qYT+ftJBP/xhrRN4Jj5Xhp6phViSGz7uAb1uTWr93aO4r8XvNRzbjLreomsNQjyabrrEO+9K/fTQfwIfNxx52He3UTPg6Nq08FJOoqHarEFNRQqbgxr+Ad/wrXz8wZp7myUI5KrJppZ4t9VUElgfpPGHLt5jXPqdU0dfvBEvNCCX+QnBnNrIma2zwt/s4J+MizenpRWR37HU++qnIwh3hxOD3IgF/yX8nUZNbXeBBcGFR9VKDOPWYlCRz6LTDr4iai5+Qgc5mRhtZCfWzv0quzE9jPfhxjs9uHHGiHgbaLR8425d0x+XjZW1j6V1OZuwEUvEkgLxO9s6lZ1nklIjRPUNufeFTJ89VkVJd5iGIeQuBlyk2xXiNi0tMo8/JtNokPiwkYCNlMjvyRUm95DbZk+7mCqvNJHpMtPH46s3n0p0gzWYBI2q8= panda@spezi"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5KNXnbiKPjASA1PDn2fkpF5vj82GVHYdTBMkKkunk7 panda@udo"
+    ];
   };
   users.users.panda = {
     isNormalUser = true;
@@ -281,7 +285,8 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  services.openssh.settings.PermitRootLogin = "prohibit-password";
   # services.tlp.enable = true; # for bluethooth etc # conflicts with services.power-profiles-demon
 
   # Copy the NixOS configuration file and link it from the resulting system
