@@ -7,12 +7,13 @@
     ./configs/mycelium.nix
     ./configs/nameserver.nix
     ./configs/nginx.nix
+    ./configs/openbao.nix
     ./configs/paste.nix
     ./configs/portfolio-panda.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
     ./configs/uptime-kuma.nix
-    ./configs/vault.nix
+    #./configs/vault.nix
     ./modules/htgen.nix
   ];
 
