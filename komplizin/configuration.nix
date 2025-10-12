@@ -63,7 +63,7 @@
   services.xserver.enable = false;
 
 
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "panda";
   services.xserver.layout = "us";
