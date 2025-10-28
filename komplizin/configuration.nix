@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../configs/openbao.nix
       ../configs/wireguard.nix
       ./hardware-configuration.nix
       ./configs/mycelium.nix
@@ -28,6 +29,10 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  security.pki.certificateFiles = [
+    ../certs/panda-root-ca-2025-1.crt
+  ];
 
   nix.gc.automatic = true;
   nix.gc.dates = "monthly";
