@@ -12,9 +12,9 @@
     # include NixOS-WSL modules
     <nixos-wsl/modules>
     ../configs/dic.nix
+    ../configs/openbao.nix
     ../configs/wireguard.nix
     ./configs/mycelium.nix
-    ./configs/vault.nix
   ];
 
   #wsl.wslConf.automount.root = "/mnt"; # default true
