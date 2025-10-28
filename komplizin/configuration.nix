@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../configs/openbao.nix
       ../configs/wireguard.nix
       ./hardware-configuration.nix
       ./configs/mycelium.nix

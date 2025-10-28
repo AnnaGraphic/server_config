@@ -1,19 +1,18 @@
 { config, modulesPath, pkgs, ... }: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
+    ../configs/openbao.nix
     ../configs/wireguard.nix
     ./configs/jokes.nix
     ./configs/letter_basic-auth.nix
     ./configs/mycelium.nix
     ./configs/nameserver.nix
     ./configs/nginx.nix
-    ./configs/openbao.nix
     ./configs/paste.nix
     ./configs/portfolio-panda.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
     ./configs/uptime-kuma.nix
-    #./configs/vault.nix
     ./modules/htgen.nix
   ];
 
