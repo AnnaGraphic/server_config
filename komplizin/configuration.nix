@@ -64,6 +64,13 @@
   services.logind.lidSwitchDocked = "ignore";
   services.logind.lidSwitchExternalPower = "ignore";
 
+  services.syncthing = {
+    enable = true;
+    user = "panda";
+    dataDir = "/home/panda/";
+    configDir = "/home/panda/.config/syncthing";
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = false;
 
