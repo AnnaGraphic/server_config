@@ -114,8 +114,6 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = [
     pkgs.borgbackup
     (pkgs.vim-full.customize {
@@ -131,16 +129,23 @@
         syntax on
       '';
   })
-  # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    pkgs.wget
     pkgs.git
-    pkgs.weechat
+    pkgs.jq
     pkgs.mosh
+    pkgs.tmux
+    pkgs.weechat
+    pkgs.wget
   ];
   environment.variables = {
     "EDITOR" = "vim";
   };
-  
+  programs.bash = {
+    interactiveShellInit = /* sh */ ''
+      HISTCONTROL='erasedups:ignorespace'
+      HISTSIZE=900001
+      HISTFILESIZE=$HISTSIZE
+    '';
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
