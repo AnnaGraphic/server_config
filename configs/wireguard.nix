@@ -3,6 +3,7 @@
   quirks.spezi.ipv4addr = "10.100.0.2";
   quirks.komplizin.ipv4addr = "10.100.0.3";
   quirks.wsl2.ipv4addr = "10.100.0.6";
+  quirks.udo.ipv4addr = "10.100.0.8";
 
   cfg = quirks.${config.networking.hostName};
 in {
@@ -14,6 +15,7 @@ in {
     10.100.0.3 komplizin.w
     10.100.0.4 prima.w
     10.100.0.6 wsl2.w
+    ${quirks.udo.ipv4addr} udo.w
   '';
 
   networking.firewall.allowedUDPPorts = [
@@ -54,7 +56,7 @@ in {
             publicKey = "LzElUKPVvjC+fxoQ0URkkSiV058yvDqo2cUv7E129mU=";
             allowedIPs = [ "10.100.0.4/32" ];
           }
-          # pixel5
+          # pixel5 a
           {
             publicKey = "Wn/MrINbn5/LeNq8U7dhgjVafbh2CNi0mMyunMMUsWo=";
             allowedIPs = [ "10.100.0.5/32" ];
@@ -63,6 +65,16 @@ in {
           {
             publicKey = "J/kVPBEHpM9SSowGgwYUwDl5MuyNN6jGB3fA61BBhkQ=";
             allowedIPs = [ "10.100.0.6/32" ];
+          }
+          # pixel5 n
+          {
+            publicKey = "ZQUBpgcH0zIJBDKYL/l/tspkQYUnCV6jR2Ur+h0Kfgo=";
+            allowedIPs = [ "10.100.0.7/32" ];
+          }
+          # udo
+          {
+            publicKey = "hea5esPrkydOB2DhQ8Y77LaNXwWkfZSsxDN9UEXor10=";
+            allowedIPs = [ "${quirks.udo.ipv4addr}/32" ];
           }
         ]
       else
