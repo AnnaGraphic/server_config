@@ -8,6 +8,8 @@ name=kuno
 host=130.61.237.100
 
 rsync -v -rlptD /home/panda/Sync/secrets/shared/hosts root@"$host":/etc/panda/hosts
+rsync -v -rlptD /home/panda/Sync/secrets/shared/m.zone root@"$host":/etc/panda/m.zone
+rsync -v -rlptD /home/panda/Sync/secrets/shared/w.zone root@"$host":/etc/panda/w.zone
 rsync -v -rlptD /home/panda/Sync/secrets/kuno/ root@"$host":/etc/panda/secrets/
 rsync -v -rlptD --delete --exclude=.git --exclude=/configuration.nix --exclude=kleingeist/ "$HOME"/Sync/code/server/ root@"$host":/etc/nixos/
 

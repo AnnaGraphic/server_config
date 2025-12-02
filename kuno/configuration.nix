@@ -12,6 +12,7 @@
     ./configs/portfolio-panda.nix
     ./configs/textadventure.nix
     ./configs/tictactoe.nix
+    ./configs/unbound.nix
     ./configs/uptime-kuma.nix
     ./modules/htgen.nix
   ];
