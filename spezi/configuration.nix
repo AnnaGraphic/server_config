@@ -83,11 +83,11 @@
   services.ferretdb.enable = true;
 
   # konfiguriert in KDE Energy Savings
-  services.logind = {
+  services.logind.settings.Login = {
     # extraConfig = ''HandlePowerKey=ignore'';
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
   };
 
   services.postgresql = {
@@ -120,11 +120,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "panda";
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "altgr-intl";
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "panda";
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "altgr-intl";
   services.syncthing = {
     enable = true;
     user = "panda";
@@ -151,7 +151,7 @@
   programs.dconf.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkb.options = "eurosign:e";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -160,7 +160,7 @@
   hardware.bluetooth.enable = true;
 
   # Enable direct rendering
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -251,7 +251,7 @@
     pkgs.git
     pkgs.weechat
     pkgs.mosh # mobile shell
-    pkgs.libsForQt5.ark
+    pkgs.kdePackages.ark
     pkgs.man-pages-posix
     # filemanager config under ~/.config/ranger
     pkgs.ranger
