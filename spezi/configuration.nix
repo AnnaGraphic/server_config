@@ -14,7 +14,6 @@
       ./shell.c-base.org.nix
       ./wetter.nix
       ./configs/alacritty.nix
-      ./configs/mycelium.nix
      # ./openvpn/c-base/default.nix
     ];
 
