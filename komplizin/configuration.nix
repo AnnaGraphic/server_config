@@ -53,11 +53,11 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  services.logind.extraConfig = ''
-    HandleHibernateKey=ignore
-    HandlePowerKey=ignore
-    HandleSuspendKey=ignore
-  '';
+  services.logind.settings.Login = {
+    HandleHibernateKey = "ignore";
+    HandlePowerKey = "ignore";
+    HandleSuspendKey = "ignore";
+  };
 
   # because extraConfig is not extra enough:
   services.logind.lidSwitch = "ignore";
