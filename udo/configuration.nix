@@ -253,7 +253,7 @@
     pkgs.git
     pkgs.weechat
     pkgs.mosh # mobile shell
-    pkgs.libsForQt5.ark
+    pkgs.kdePackages.ark
     pkgs.man-pages-posix
     # filemanager config under ~/.config/ranger
     pkgs.ranger
