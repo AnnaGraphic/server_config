@@ -6,7 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ../configs/dic.nix
       ../configs/wireguard.nix
       ./configs/alacritty.nix
@@ -116,7 +116,7 @@
 #    ''}"
 #  '';
 
-  services.wordpress.sites."localhost" = {};
+  #services.wordpress.sites."localhost" = {};
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -137,7 +137,7 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
       enable = true;
-        setSocketVariable = true;
+      setSocketVariable = true;
   };
 
   # VM-Sachen
@@ -156,7 +156,7 @@
   services.xserver.xkb.options = "eurosign:e";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
