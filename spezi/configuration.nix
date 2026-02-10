@@ -7,14 +7,14 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../configs/wireguard.nix
       ../configs/dic.nix
+      ../configs/wireguard.nix
+      ./configs/alacritty.nix
       ./configs/auto-tether.nix
+      ./configs/mycelium.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
       ./wetter.nix
-      ./configs/alacritty.nix
-      ./configs/mycelium.nix
      # ./openvpn/c-base/default.nix
     ];
 
@@ -249,15 +249,15 @@
       ];
     })
     pkgs.davfs2 # mount storage-box via webDav
-    pkgs.wget
     pkgs.git
-    pkgs.weechat
-    pkgs.mosh # mobile shell
     pkgs.kdePackages.ark
     pkgs.man-pages-posix
+    pkgs.mosh # mobile shell
     # filemanager config under ~/.config/ranger
     pkgs.ranger
     pkgs.sxiv
+    pkgs.weechat
+    pkgs.wget
   ];
   environment.variables = {
     "EDITOR" = "vim";
