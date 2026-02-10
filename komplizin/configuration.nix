@@ -70,6 +70,8 @@
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
   };
+  networking.firewall.allowedTCPPorts = [ 22000 ];
+  networking.firewall.allowedUDPPorts = [ 21027 ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = false;

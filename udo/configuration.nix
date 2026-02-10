@@ -132,6 +132,8 @@
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
   };
+  networking.firewall.allowedTCPPorts = [ 22000 ];
+  networking.firewall.allowedUDPPorts = [ 21027 ];
 
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
