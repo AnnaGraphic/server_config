@@ -69,7 +69,7 @@
 
   environment.systemPackages = [
     pkgs.cifs-utils
-    (pkgs.vim_configurable.customize {
+    (pkgs.vim-full.customize {
         name = "vim";
         vimrcConfig.customRC = ''
           set backspace=indent,eol,start
