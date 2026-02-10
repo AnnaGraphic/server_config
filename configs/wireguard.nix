@@ -76,6 +76,11 @@ in {
             publicKey = "hea5esPrkydOB2DhQ8Y77LaNXwWkfZSsxDN9UEXor10=";
             allowedIPs = [ "${quirks.udo.ipv4addr}/32" ];
           }
+          # ina
+          {
+            publicKey = "3XjJMysonU4qwkj8Wd6kV6hnM/038c671utrO7KDQzo=";
+            allowedIPs = [ "10.100.0.9/32" ];
+          }
         ]
       else
         [
