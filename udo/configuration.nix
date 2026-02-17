@@ -11,6 +11,7 @@
       ../configs/dic.nix
       ../configs/wireguard.nix
       ./hardware-configuration.nix
+      ./modules/remote-disk-unlocking.nix
       ./shell.c-base.org.nix
       ./wetter.nix
       ./configs/alacritty.nix
@@ -122,8 +123,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "panda";
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
   services.syncthing = {
