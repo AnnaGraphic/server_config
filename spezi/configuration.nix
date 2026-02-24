@@ -131,6 +131,8 @@
     dataDir = "/home/panda/";
     configDir = "/home/panda/.config/syncthing";
   };
+  services.tor.enable = true;
+  services.tor.client.enable = true;
   networking.firewall.allowedTCPPorts = [ 22000 ];
   networking.firewall.allowedUDPPorts = [ 21027 ];
 
