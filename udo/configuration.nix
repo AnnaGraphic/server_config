@@ -10,6 +10,7 @@
       #../configs/wireguard.nix
       ../configs/dic.nix
       ../configs/wireguard.nix
+      ./configs/monitoring.nix
       ./hardware-configuration.nix
       ./modules/remote-disk-unlocking.nix
       ./shell.c-base.org.nix
