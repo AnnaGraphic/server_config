@@ -6,17 +6,16 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      #../configs/wireguard.nix
+    [
       ../configs/dic.nix
       ../configs/wireguard.nix
+      ./configs/alacritty.nix
       ./configs/monitoring.nix
+      ./configs/mycelium.nix
       ./hardware-configuration.nix
       ./modules/remote-disk-unlocking.nix
       ./shell.c-base.org.nix
       ./wetter.nix
-      ./configs/alacritty.nix
-      ./configs/mycelium.nix
      # ./openvpn/c-base/default.nix
     ];
 
@@ -138,11 +137,11 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
       enable = true;
-        setSocketVariable = true;
+      setSocketVariable = true;
   };
 
   # VM-Sachen
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   #virtualisation.restrictNetwork = false;
 
   # tells from where to boot after hibernating
@@ -174,11 +173,10 @@
 
   users.mutableUsers = false;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.root = {
     hashedPasswordFile = "/etc/panda/secrets/nixospandapassword";
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHot6G5XcWrFMEaHuGo+Zj8ERpE7TA/QK4F3I/uK+QtK panda@udo"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5KNXnbiKPjASA1PDn2fkpF5vj82GVHYdTBMkKkunk7 panda@udo"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMe6DnF20BPefG3m9Naf/PdTJ/pjC1TTpsXtZQQ52We panda@spezi"
     ];
   };
