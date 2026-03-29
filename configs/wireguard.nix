@@ -35,6 +35,7 @@ in {
 
   networking.wireguard.interfaces.wg0 = {
     ips = [ "${cfg.ipv4addr}/24" ];
+    mtu = 1280;
     allowedIPsAsRoutes = true;
     listenPort = 51820;
     privateKeyFile = "/etc/panda/secrets/wireguard-private-key";
