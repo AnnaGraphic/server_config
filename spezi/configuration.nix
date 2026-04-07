@@ -8,6 +8,8 @@
   imports =
     [
       ../configs/dic.nix
+      ../configs/packages.nix
+      ../configs/pi-agent.nix
       ../configs/wireguard.nix
       ./configs/alacritty.nix
       ./configs/auto-tether.nix

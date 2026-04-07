@@ -1,3 +1,6 @@
 [submodule "kleingeist"]
 	path = kleingeist
 	url = https://github.com/samueldr/cross-system
+[submodule "flakes/llm-agents.nix"]
+	path = flakes/llm-agents.nix
+	url = https://github.com/numtide/llm-agents.nix
