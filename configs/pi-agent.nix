@@ -2,6 +2,23 @@
   boot.enableContainers = true;
   virtualisation.containers.enable = true;
 
+  networking.nat = {
+    enable = true;
+    enableIPv6 = true;
+  };
+
+  networking.firewall.extraCommands = ''
+    iptables -t nat -A POSTROUTING \
+      -s 192.168.100.0/24 ! -d 192.168.100.0/24 \
+      -j MASQUERADE
+  '';
+
+  networking.firewall.extraStopCommands = ''
+    iptables -t nat -D POSTROUTING \
+      -s 192.168.100.0/24 ! -d 192.168.100.0/24 \
+      -j MASQUERADE || true
+  '';
+
   containers.pi-agent = {
     autoStart = true;
     privateNetwork = true;
