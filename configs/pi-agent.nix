@@ -33,7 +33,6 @@
       ];
 
       networking = {
-        firewall.allowedTCPPorts = [ ]; # usually none needed
         useHostResolvConf = lib.mkForce false;
       };
 
@@ -50,13 +49,12 @@
 
       # example runtime (adjust depending on Pi requirements)
       environment.systemPackages = with pkgs; [
-        nodejs
-        git
-        python3
         coreutils
+        git
+        nodejs
+        python3
       ];
 
-      # example systemd service
       systemd.services.pi-agent = {
         description = "Pi Coding Agent";
         wantedBy = [ "multi-user.target" ];
