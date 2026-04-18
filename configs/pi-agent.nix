@@ -21,6 +21,13 @@
 
   containers.pi-agent = {
     autoStart = true;
+
+    # TODO: ensure portable path
+    bindMounts."/work" = {
+      hostPath = "/home/panda/Sync/code/pi";
+      isReadOnly = false;
+    };
+
     privateNetwork = true;
 
     hostAddress = "192.168.100.20";
