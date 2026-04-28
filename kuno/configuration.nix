@@ -86,6 +86,7 @@
 
   networking.firewall.allowedTCPPorts = [
     443  # https
+    64022
   ];
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 5432 ];
   networking.useDHCP = false;
@@ -119,7 +120,11 @@
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "panda@c-base.org";
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    ports = [ 64022 ];
+  };
 
   users.users.panda = {
     extraGroups = [
