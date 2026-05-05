@@ -9,7 +9,8 @@
   services.udev.extraRules = /* sh */ ''
     ACTION=="add", SUBSYSTEM=="net", KERNEL=="usb*", NAME="android"
 
-    ACTION=="add", SUBSYSTEM=="usb", ATTR{serial}=="13111FDD4002PY", \
+    # idProduct==Pixel 5
+    ACTION=="add", SUBSYSTEM=="usb", ATTR{idProduct}=="4ee7", \
     TAG+="systemd", ENV{SYSTEMD_WANTS}+="usb_tether@$attr{serial}.service"
   '';
   systemd.network.networks.android = {
