@@ -86,7 +86,6 @@
 
   networking.firewall.allowedTCPPorts = [
     443  # https
-    64022
   ];
   networking.firewall.interfaces.wg0.allowedTCPPorts = [ 5432 ];
   networking.useDHCP = false;
@@ -120,11 +119,17 @@
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "panda@c-base.org";
 
-  services.openssh = {
+  services.fail2ban = {
     enable = true;
-    settings.PasswordAuthentication = false;
-    ports = [ 64022 ];
+    maxretry = 5;
+    bantime = "24h";
+    ignoreIP = [
+      "spezi.m"
+      "udo.m"
+    ];
   };
+
+  services.openssh.enable = true;
 
   users.users.panda = {
     extraGroups = [
@@ -132,6 +137,12 @@
     ];
     isNormalUser = true;
     hashedPasswordFile = "/etc/panda/secrets/panda.hashedPassword";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICdAKTV+dgjln48IocGmH4dNBZT1rqgcE+p2VSirVybU pixel5"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5KNXnbiKPjASA1PDn2fkpF5vj82GVHYdTBMkKkunk7 panda@udo"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDMe6DnF20BPefG3m9Naf/PdTJ/pjC1TTpsXtZQQ52We panda@spezi"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB6gCeFAzAWvZIrt1S18MCONflAmu5JqQ3fBtHsGzFjm panda@komplizin"
+    ];
     packages = [
       pkgs.tmux
       pkgs.weechat
@@ -142,7 +153,7 @@
     isNormalUser = true;
     openssh.authorizedKeys.keys = [
       # for reverse ssh tunnel from prima (see prima@prima:tunnelfummel)
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDzjDjfvD9dWthQItx6iWlezgxPVSJCylpMiQVymRU3"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINDzjDjfvD9dWthQItx6iWlezgxPVSJCylpMiQVymRU3" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII5KNXnbiKPjASA1PDn2fkpF5vj82GVHYdTBMkKkunk7 panda@udo"
     ];
   };
 

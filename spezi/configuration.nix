@@ -283,12 +283,6 @@
     '';
   };
 
-  # TODO: configure on all hosts
-  programs.ssh.extraConfig = ''
-    Host kuno.m kuno.w
-      Port 64022
-  '';
-
   fonts.packages = [
     pkgs.jetbrains-mono
   ];
