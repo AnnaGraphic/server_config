@@ -200,8 +200,10 @@
       pkgs.brave
       pkgs.firefox
       pkgs.firefox-devedition
+      pkgs.jq
       pkgs.libreoffice-qt
       pkgs.lutris
+      pkgs.tmux
       pkgs.vlc
       (pkgs.vscode-with-extensions.override {
         vscode = pkgs.vscodium;
@@ -218,6 +220,7 @@
           }
          ];
       })
+      pkgs.xournalpp
     ];
   };
 
@@ -254,11 +257,15 @@
     })
     pkgs.davfs2 # mount storage-box via webDav
     pkgs.git
+    pkgs.keepassxc
+    pkgs.keepassxc-go
     pkgs.kdePackages.ark
     pkgs.man-pages-posix
     pkgs.mosh # mobile shell
     # filemanager config under ~/.config/ranger
+    pkgs.python3 # for codex hooks
     pkgs.ranger
+    pkgs.signal-cli
     pkgs.sxiv
     pkgs.weechat
     pkgs.wget

@@ -68,7 +68,9 @@
   };
 
   environment.systemPackages = [
+    pkgs.borgbackup
     pkgs.cifs-utils
+    pkgs.jq
     (pkgs.vim-full.customize {
         name = "vim";
         vimrcConfig.customRC = ''
@@ -144,6 +146,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB6gCeFAzAWvZIrt1S18MCONflAmu5JqQ3fBtHsGzFjm panda@komplizin"
     ];
     packages = [
+      pkgs.git
       pkgs.tmux
       pkgs.weechat
     ];
