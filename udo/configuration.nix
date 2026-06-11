@@ -20,6 +20,7 @@
     ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.resumeDevice = "/dev/mapper/main-swap";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -37,6 +38,8 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  powerManagement.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -143,11 +146,6 @@
   # VM-Sachen
   #virtualisation.virtualbox.host.enable = true;
   #virtualisation.restrictNetwork = false;
-
-  # tells from where to boot after hibernating
-  boot.kernelParams = [
-    "resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
-];
 
   # desktop settings
   programs.dconf.enable = true;
