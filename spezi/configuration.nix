@@ -22,6 +22,8 @@
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+  boot.initrd.systemd.enable = false;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
