@@ -147,13 +147,16 @@
   };
 
   # VM-Sachen
-  virtualisation.virtualbox.host.enable = true;
-  #virtualisation.restrictNetwork = false;
+  #virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
+  #virtualisation.virtualbox.host.addNetworkInterface = false;
+  ##virtualisation.restrictNetwork = false;
 
+  # XXX swap's uuid is different - check if this param is used
   # tells from where to boot after hibernating
   boot.kernelParams = [
-    "resume=UUID=58e8971d-2a81-424c-8fb0-4ade8c67964b"
-];
+    "resume=UUID=a4b4db5e-9741-406c-8bdc-aa237e5ed810"
+  ];
 
   # desktop settings
   programs.dconf.enable = true;
