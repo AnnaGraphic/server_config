@@ -11,12 +11,12 @@
       ../configs/packages.nix
       ../configs/pi-agent.nix
       ../configs/wireguard.nix
+      ../configs/wetter.nix
       ./configs/alacritty.nix
       ./configs/auto-tether.nix
       ./configs/mycelium.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
-      ./wetter.nix
      # ./openvpn/c-base/default.nix
     ];
 
