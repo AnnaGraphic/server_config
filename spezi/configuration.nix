@@ -15,6 +15,7 @@
       ./configs/alacritty.nix
       ./configs/auto-tether.nix
       ./configs/mycelium.nix
+      ./configs/networkmanager.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
      # ./openvpn/c-base/default.nix
