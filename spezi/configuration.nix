@@ -16,6 +16,7 @@
       ./configs/auto-tether.nix
       ./configs/mycelium.nix
       ./configs/networkmanager.nix
+      ./configs/opencode.nix
       ./configs/openvpn.nix
       ./hardware-configuration.nix
       ./shell.c-base.org.nix
